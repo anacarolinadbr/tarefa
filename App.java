@@ -15,7 +15,6 @@ public class App {
 
     public static void main(String[] args) {
         
-       Usuario usuario = new Usuario("ana", "ana@123", "123");
-       UsuarioDAO.salvar(usuario);
+       
 
 }}

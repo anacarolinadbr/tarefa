@@ -5,7 +5,9 @@
 package gerenciadorTarefas.view;
 
 import gerenciadorTarefas.DAO.TarefaDAO;
+import gerenciadorTarefas.controller.TarefaController;
 import gerenciadorTarefas.database.Conexao;
+import gerenciadorTarefas.model.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,10 +23,12 @@ public class TelaRegistro extends javax.swing.JFrame {
     /**
      * Creates new form TelaRegistro
      */
+    
+  
     public TelaRegistro() {
        
         initComponents();
-        
+       
     carregarTabela();
     
     }
@@ -195,7 +199,7 @@ public class TelaRegistro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new TelaInicial().setVisible(true);
+        new TelaAdicionar().setVisible(true);
             this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

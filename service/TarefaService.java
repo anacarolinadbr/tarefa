@@ -14,11 +14,11 @@ import gerenciadorTarefas.model.Tarefa;
 public class TarefaService {
    public static boolean registroTarefa(Tarefa tarefa) {        
         
-        // Se o nome da tarefa ou o status estiverem em branco, ele nem tenta e já barra aqui
+        // Se o nome da tarefa ou o status estiverem em branco, eleda erro já
         if(tarefa.getTarefa().isBlank() || tarefa.getAndamento().isBlank()) {
             return false;
         }
-         // Se passou no teste acima, ele chama o DAO para gravar de verdade no banco
+         // Se passou no teste acima, ele chama o DAO 
         TarefaDAO.criarTarefa(tarefa);
         return true;
     }
@@ -32,12 +32,12 @@ public class TarefaService {
         if(tarefa != null){
             return true;
         }
-        // Se não achou nada, volta falso
+        // Se não achou nada, falso
         return false;
     }
     
     public static boolean deletarTarefa(Tarefa tarefa) {
-        // Se o ID da tarefa for zero ou negativo, é porque tem algo errado
+        // Se o ID da tarefa for zero ou negativo, tem algo errado
         if(tarefa.getIdTarefa() <= 0) {
             return false;
         }
@@ -46,8 +46,7 @@ public class TarefaService {
         return true;
     }
    
-   
-    // Esse aqui cuida das atualizações, pra ninguém "limpar" o título da tarefa sem querer
+
     public static boolean atualizaTarefa(int id, String tarefa, String andamento) {
         if(tarefa.isBlank() || andamento.isBlank()) {
             // se tentarem atualizar pra um texto vazio, ele não deixa

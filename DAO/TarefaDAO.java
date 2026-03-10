@@ -22,7 +22,7 @@ public class TarefaDAO {
     
     try(Connection conn = Conexao.conectar(); 
         PreparedStatement stmt  = conn.prepareStatement(sql)){
-         // Saída de depuração para verificar o ID do usuário
+         // Saída para verificar o ID do usuário
         System.out.println("Usuario inserir: " + tarefa.getIdUsuario());
         stmt.setString(1, tarefa.getTarefa());
         stmt.setString(2, tarefa.getAndamento());
@@ -43,7 +43,7 @@ public class TarefaDAO {
         
         try(Connection conn = Conexao.conectar();
         PreparedStatement stmt = conn.prepareStatement(sql)) {
-            // Define o valor do filtro baseado no ID contido no objeto 
+            // Define o filtro baseado no ID contido no objeto 
             stmt.setInt(1, tarefa.getIdUsuario());
             // ResultSet armazena o conjunto de resultados retornados pelo banco
             ResultSet rs =  stmt.executeQuery();

@@ -174,7 +174,7 @@ public class TelaInicial extends javax.swing.JFrame {
         // Cria uma nova instância do objeto Usuario com os dados que tem
         Usuario usuario = new Usuario(nome,email,senha);
         // Chama o método do DAO para colocar no banco
-        UsuarioDAO.salvar(usuario);
+        UsuarioDAO.novoUsuario(usuario);
         JOptionPane.showMessageDialog(this, "Usuario cadastrado com sucesso!");
      
     }//GEN-LAST:event_btnRegistrarActionPerformed
@@ -192,7 +192,7 @@ public class TelaInicial extends javax.swing.JFrame {
         javax.swing.JOptionPane.showMessageDialog(this, "Bem-vindo, " + log.getNome() + "!");
         
         
-      new TelaRegistro().setVisible(true);
+      new TelaAdicionar().setVisible(true);
             this.dispose();
     } else {
         // Falha! Regra de negócio: mensagem genérica por segurança

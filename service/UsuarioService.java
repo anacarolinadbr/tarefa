@@ -22,14 +22,14 @@ public class UsuarioService {
             return false;
         }
          // Se estiver tudo preenchido, manda para o DAO salvar lá no banco
-        return UsuarioDAO.salvar(usuario);
+        return UsuarioDAO.novoUsuario(usuario);
     }
 
   
-    // Esse que valida quem está tentando entrar no sistema
+   
    public static boolean login(String nomeUsua, String senha) {
        // Primeiro, ele vai lá no banco ver se existe alguém com esse nome de usuário
-        Usuario BancoUsua = UsuarioDAO.buscarPorUsuario(nomeUsua);
+        Usuario BancoUsua = UsuarioDAO.buscarPorEmail(nomeUsua);
        // Se o banco responder que achou alguém
         if (BancoUsua != null) {
              // ele usa o BCrypt para comparar a senha que você digitou com a senha bagunçada do banco
@@ -48,6 +48,6 @@ public class UsuarioService {
        if(usuario.isBlank() || senha.isBlank()){
            return null;
        } 
-       return UsuarioDAO.login(usuario, email, senha);
+       return UsuarioDAO.autenticarUser(email,senha);
    }
 }
